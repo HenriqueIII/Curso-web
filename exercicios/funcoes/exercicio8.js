@@ -9,3 +9,38 @@ Exemplo:
 String: “10 20 20 8 25 3 0 30 1”
 Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontuação e a pior pontuação
 aconteceu no sétimo jogo.)*/
+
+
+class Resultados{
+    #resultado; #records; #worst; #best
+
+    constructor(resultadosStr){
+        this.#resultado = resultadosStr.split(" ")
+        this.#records = 0; this.#worst = 0; this.#best = this.#resultado[0]
+        let arr = this.#resultado
+        for (let i = 1; i < arr.length; ++i) {
+            this.isNewRecord(arr[i])
+            this.isWorstRecord(arr[i], i)
+        }
+    }
+
+    isNewRecord(valor) {
+        if (Number(valor) > Number(this.#best)){
+            ++this.#records
+            this.#best = valor
+        }
+    }
+
+    isWorstRecord(valor, index) {
+        if (valor < this.#resultado[this.#worst]) {
+            this.#worst = index
+        }
+    }
+
+    print() {
+        return [this.#records, this.#worst+1]
+    }
+}
+
+let lista1 = new Resultados("10 20 20 8 25 3 0 30 1")
+console.log(lista1.print())
