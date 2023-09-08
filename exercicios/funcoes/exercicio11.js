@@ -6,3 +6,16 @@ Prevalecem as últimas regras sobre as primeiras.
 Partindo daí elabore uma função que recebe um ano e calcula se ele é ano bissexto, imprimindo no console a
 mensagem e retornando true ou false.*/
 
+const bissexto = (ano) => {
+    if(!(ano%4) && ano%100 || !(ano % 400)){
+        console.log(`O ano de ${ano} é bisexto`)
+        return true
+    }else
+        console.log(`O ano de ${ano} não é bisexto`)
+    return false
+}
+
+bissexto(2020)
+bissexto(1900)
+bissexto(2024)
+bissexto(2022)
