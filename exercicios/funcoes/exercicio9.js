@@ -12,9 +12,11 @@ const aprovacao = (nota) => {
         return 'Reprovado'
 
     let multiplo5 = nota
+
     if (nota%5){
-        multiplo5 = (Math.floor(nota / 5) + 1) * 5
+        multiplo5 = (Math.floor(nota / 5) + 1) * 5 // ex 43 -> 43 / 5 = 8 | o prox mult de 5 sera 8 + 1 * 5 = 45
     }
+    
     if ((multiplo5 - nota) < 3) { nota = multiplo5 }
     
     return `Aprovado com ${nota} valores.` 
