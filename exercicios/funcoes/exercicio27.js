@@ -9,8 +9,6 @@ const crescimento = (c1alt, c1tac, c2alt, c2tac) => {
     if (c2alt < c1alt)
         [c1alt, c1tac, c2alt, c2tac] = [c2alt, c2tac, c1alt, c1tac]
 
-    console.log(c1alt, c1tac, c2alt, c2tac)
-
     if (c1tac < c2tac)
         return 'A criança menor nunca ultrapassara a altura da criança maior'
     let anos = 0
