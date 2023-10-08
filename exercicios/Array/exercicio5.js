@@ -1,8 +1,9 @@
 const maiorOuIgual = (a, b) => {
-    if(a >= b){
-        return true
-    }else
-        return false
+    // if(a >= b){
+    //     return true
+    // }else
+    //     return false
+    return a >= b
 }
 
 console.log(maiorOuIgual(0, 0))
